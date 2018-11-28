@@ -23,7 +23,8 @@
   "peerDependencies": {
     "@angular/common": ">=6.0.0 <8.0.0",
     "@angular/core": ">=6.0.0 <8.0.0",
-    "@angular/forms": ">=6.0.0 <8.0.0"
+    "@angular/forms": ">=6.0.0 <8.0.0",
+    "ngx-perfect-scrollbar": "~7.0.0"
   },
   "ngPackage": {
     "lib": {

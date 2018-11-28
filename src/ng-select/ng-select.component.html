@@ -10,15 +10,15 @@
                 </ng-template>
 
                 <ng-template
-                    [ngTemplateOutlet]="labelTemplate || defaultLabelTemplate"
-                    [ngTemplateOutletContext]="{ item: item.value, clear: clearItem, label: item.label }">
+                        [ngTemplateOutlet]="labelTemplate || defaultLabelTemplate"
+                        [ngTemplateOutletContext]="{ item: item.value, clear: clearItem, label: item.label }">
                 </ng-template>
             </div>
         </ng-container>
 
         <ng-template *ngIf="multiLabelTemplate && selectedValues.length > 0"
-                [ngTemplateOutlet]="multiLabelTemplate"
-                [ngTemplateOutletContext]="{ items: selectedValues, clear: clearItem }">
+                     [ngTemplateOutlet]="multiLabelTemplate"
+                     [ngTemplateOutletContext]="{ items: selectedValues, clear: clearItem }">
         </ng-template>
 
         <div class="ng-input">
@@ -53,54 +53,58 @@
 </div>
 
 <ng-dropdown-panel *ngIf="isOpen"
-    class="ng-dropdown-panel"
-    [virtualScroll]="virtualScroll"
-    [bufferAmount]="bufferAmount"
-    [appendTo]="appendTo"
-    [position]="dropdownPosition"
-    [headerTemplate]="headerTemplate"
-    [footerTemplate]="footerTemplate"
-    [items]="itemsList.filteredItems"
-    [markedItem]="itemsList.markedItem"
-    (update)="viewPortItems = $event"
-    (scroll)="scroll.emit($event)"
-    (scrollToEnd)="scrollToEnd.emit($event)"
-    (outsideClick)="close()"
-    [class.ng-select-multiple]="multiple"
-    [ngClass]="classes"
-    [id]="dropdownId">
+                   class="ng-dropdown-panel"
+                   [virtualScroll]="virtualScroll"
+                   [bufferAmount]="bufferAmount"
+                   [appendTo]="appendTo"
+                   [position]="dropdownPosition"
+                   [headerTemplate]="headerTemplate"
+                   [footerTemplate]="footerTemplate"
+                   [items]="itemsList.filteredItems"
+                   [markedItem]="itemsList.markedItem"
+                   (update)="viewPortItems = $event"
+                   (scroll)="scroll.emit($event)"
+                   (scrollToEnd)="scrollToEnd.emit($event)"
+                   (outsideClick)="close()"
+                   [class.ng-select-multiple]="multiple"
+                   [ngClass]="classes"
+                   [id]="dropdownId">
 
     <ng-container>
-        <div class="ng-option" [attr.role]="item.children ? 'group' : 'option'" (click)="toggleItem(item)" (mouseover)="onItemHover(item)"
-                *ngFor="let item of viewPortItems"
-                [class.ng-option-disabled]="item.disabled"
-                [class.ng-option-selected]="item.selected"
-                [class.ng-optgroup]="item.children"
-                [class.ng-option]="!item.children"
-                [class.ng-option-child]="!!item.parent"
-                [class.ng-option-marked]="item === itemsList.markedItem"
-                [attr.aria-selected]="item.selected"
-                [attr.id]="item?.htmlId">
+        <div perfectScrollbar height="200px">
+            <div class="ng-option" [attr.role]="item.children ? 'group' : 'option'" (click)="toggleItem(item)"
+                 (mouseover)="onItemHover(item)"
+                 *ngFor="let item of viewPortItems"
+                 [class.ng-option-disabled]="item.disabled"
+                 [class.ng-option-selected]="item.selected"
+                 [class.ng-optgroup]="item.children"
+                 [class.ng-option]="!item.children"
+                 [class.ng-option-child]="!!item.parent"
+                 [class.ng-option-marked]="item === itemsList.markedItem"
+                 [attr.aria-selected]="item.selected"
+                 [attr.id]="item?.htmlId">
 
-            <ng-template #defaultOptionTemplate>
-                <span class="ng-option-label">{{item.label}}</span>
-            </ng-template>
+                <ng-template #defaultOptionTemplate>
+                    <span class="ng-option-label">{{item.label}}</span>
+                </ng-template>
 
-            <ng-template
-                [ngTemplateOutlet]="item.children ? (optgroupTemplate || defaultOptionTemplate) : (optionTemplate || defaultOptionTemplate)"
-                [ngTemplateOutletContext]="{ item: item.value, item$:item, index: item.index, searchTerm: filterValue }">
-            </ng-template>
-        </div>
+                <ng-template
+                        [ngTemplateOutlet]="item.children ? (optgroupTemplate || defaultOptionTemplate) : (optionTemplate || defaultOptionTemplate)"
+                        [ngTemplateOutletContext]="{ item: item.value, item$:item, index: item.index, searchTerm: filterValue }">
+                </ng-template>
+            </div>
 
-        <div class="ng-option" [class.ng-option-marked]="!itemsList.markedItem" (mouseover)="itemsList.unmarkItem()" role="option" (click)="selectTag()" *ngIf="showAddTag">
-            <ng-template #defaultTagTemplate>
-                <span><span class="ng-tag-label">{{addTagText}}</span>"{{filterValue}}"</span>
-            </ng-template>
+            <div class="ng-option" [class.ng-option-marked]="!itemsList.markedItem" (mouseover)="itemsList.unmarkItem()"
+                 role="option" (click)="selectTag()" *ngIf="showAddTag">
+                <ng-template #defaultTagTemplate>
+                    <span><span class="ng-tag-label">{{addTagText}}</span>"{{filterValue}}"</span>
+                </ng-template>
 
-            <ng-template
-                [ngTemplateOutlet]="tagTemplate || defaultTagTemplate"
-                [ngTemplateOutletContext]="{ searchTerm: filterValue }">
-            </ng-template>
+                <ng-template
+                        [ngTemplateOutlet]="tagTemplate || defaultTagTemplate"
+                        [ngTemplateOutletContext]="{ searchTerm: filterValue }">
+                </ng-template>
+            </div>
         </div>
     </ng-container>
 
@@ -110,8 +114,8 @@
         </ng-template>
 
         <ng-template
-            [ngTemplateOutlet]="notFoundTemplate || defaultNotFoundTemplate"
-            [ngTemplateOutletContext]="{ searchTerm: filterValue }">
+                [ngTemplateOutlet]="notFoundTemplate || defaultNotFoundTemplate"
+                [ngTemplateOutletContext]="{ searchTerm: filterValue }">
         </ng-template>
     </ng-container>
 
@@ -121,7 +125,7 @@
         </ng-template>
 
         <ng-template
-            [ngTemplateOutlet]="typeToSearchTemplate || defaultTypeToSearchTemplate">
+                [ngTemplateOutlet]="typeToSearchTemplate || defaultTypeToSearchTemplate">
         </ng-template>
     </ng-container>
 
@@ -131,8 +135,8 @@
         </ng-template>
 
         <ng-template
-            [ngTemplateOutlet]="loadingTextTemplate || defaultLoadingTextTemplate"
-            [ngTemplateOutletContext]="{ searchTerm: filterValue  }">
+                [ngTemplateOutlet]="loadingTextTemplate || defaultLoadingTextTemplate"
+                [ngTemplateOutletContext]="{ searchTerm: filterValue  }">
         </ng-template>
     </ng-container>
 

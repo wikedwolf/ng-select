@@ -17,6 +17,7 @@ import { NgOptionComponent } from './ng-option.component';
 import { NgOptionHighlightDirective } from './ng-option-highlight.directive';
 import { NgDropdownPanelComponent } from './ng-dropdown-panel.component';
 import { DefaultSelectionModelFactory } from './selection-model';
+import { PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface, PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 @NgModule({
     declarations: [
@@ -36,7 +37,7 @@ import { DefaultSelectionModelFactory } from './selection-model';
         NgTagTemplateDirective
     ],
     imports: [
-        CommonModule
+        CommonModule, PerfectScrollbarModule
     ],
     exports: [
         NgSelectComponent,
@@ -54,7 +55,13 @@ import { DefaultSelectionModelFactory } from './selection-model';
         NgTagTemplateDirective
     ],
     providers: [
-        { provide: SELECTION_MODEL_FACTORY, useValue: DefaultSelectionModelFactory }
+        { provide: SELECTION_MODEL_FACTORY, useValue: DefaultSelectionModelFactory },
+        {
+            provide: PERFECT_SCROLLBAR_CONFIG,
+            useValue: {
+                suppressScrollX: true
+            } as PerfectScrollbarConfigInterface
+        }
     ]
 })
 export class NgSelectModule { }

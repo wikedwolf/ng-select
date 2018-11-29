@@ -10,7 +10,7 @@
     "npm": ">= 3.0.0"
   },
   "scripts": {
-    "clean": "rimraf out-tsc dist/* integration/node_modules/@ng-select",
+    "clean": "rimraf out-tsc dist/* integration/node_modules/ngw-select",
     "prebuild": "yarn clean",
     "build": "ng-packagr -p ./src/package.json && yarn build:themes && yarn copy-sass",
     "build:demo": "rimraf dist && webpack --config ./scripts/webpack.dev.js --progress --profile --bail",

@@ -1,16 +1,11 @@
 {
-  "repository": "wikedwolf/ngw-select",
-  "description": "An Angular2 select library",
-  "author": "https://github.com/wikedwolf",
-  "name": "ngw-select",
-  "homepage": "https://github.com/wikedwolf/ngw-select",
-  "version": "0.0.4",
+  "repository": "ng-select/ng-select",
   "engines": {
     "node": ">= 6.9.0",
     "npm": ">= 3.0.0"
   },
   "scripts": {
-    "clean": "rimraf out-tsc dist/* integration/node_modules/ngw-select",
+    "clean": "rimraf out-tsc dist/* integration/node_modules/@ng-select",
     "prebuild": "yarn clean",
     "build": "ng-packagr -p ./src/package.json && yarn build:themes && yarn copy-sass",
     "build:demo": "rimraf dist && webpack --config ./scripts/webpack.dev.js --progress --profile --bail",
@@ -68,7 +63,6 @@
     "karma-webpack": "^3.0.0",
     "ng-packagr": "^4.1.0",
     "ng-snippets-loader": "^0.2.5",
-    "ngx-perfect-scrollbar": "~7.0.0",
     "node-sass": "^4.9.3",
     "popper.js": "^1.14.4",
     "postcss-loader": "^3.0.0",
@@ -87,7 +81,7 @@
     "typescript": "2.9.2",
     "webpack": "4.16.5",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.10",
+    "webpack-dev-server": "3.1.5",
     "zone.js": "^0.8.26"
   }
 }

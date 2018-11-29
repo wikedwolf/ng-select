@@ -1,11 +1,11 @@
 {
   "$schema": "../node_modules/ng-packagr/package.schema.json",
-  "name": "@wikedwolf/ngw-select",
-  "version": "0.0.4",
+  "name": "@ng-select/ng-select",
+  "version": "2.12.1",
   "description": "Angular ng-select - All in One UI Select, Multiselect and Autocomplete",
-  "author": "wikedwolf/ngw-select",
+  "author": "@ng-select/ng-select",
   "license": "MIT",
-  "repository": "wikedwolf/nwg-select",
+  "repository": "ng-select/ng-select",
   "engines": {
     "node": ">= 6.9.0",
     "npm": ">= 3.0.0"
@@ -23,8 +23,7 @@
   "peerDependencies": {
     "@angular/common": ">=6.0.0 <8.0.0",
     "@angular/core": ">=6.0.0 <8.0.0",
-    "@angular/forms": ">=6.0.0 <8.0.0",
-    "ngx-perfect-scrollbar": "~7.0.0"
+    "@angular/forms": ">=6.0.0 <8.0.0"
   },
   "ngPackage": {
     "lib": {

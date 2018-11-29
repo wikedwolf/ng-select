@@ -1,11 +1,11 @@
 {
   "$schema": "../node_modules/ng-packagr/package.schema.json",
-  "name": "@wikedwolf/ng-select",
+  "name": "@wikedwolf/ngw-select",
   "version": "0.0.4",
   "description": "Angular ng-select - All in One UI Select, Multiselect and Autocomplete",
-  "author": "wikedwolf/ng-select",
+  "author": "wikedwolf/ngw-select",
   "license": "MIT",
-  "repository": "wikedwolf/ng-select",
+  "repository": "wikedwolf/nwg-select",
   "engines": {
     "node": ">= 6.9.0",
     "npm": ">= 3.0.0"

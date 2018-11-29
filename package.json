@@ -3,8 +3,8 @@
   "description": "An Angular2 select library",
   "author": "https://github.com/wikedwolf",
   "name": "ngw-select",
-  "main": "angular-slug.js",
   "homepage": "https://github.com/wikedwolf/ngw-select",
+  "version": "0.0.4",
   "engines": {
     "node": ">= 6.9.0",
     "npm": ">= 3.0.0"
